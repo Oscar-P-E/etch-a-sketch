@@ -1,4 +1,20 @@
+* {
+  border: 1px red solid;
+}
+
+html,
+body {
+  border: none;
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%; /* 10pt, for easy rem sizing */
+}
+
+.container {
+  width: 960px;
+  height: 960px;
+  padding: 0;
+  margin: auto;
 }
