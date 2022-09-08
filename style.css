@@ -1,11 +1,11 @@
-* {
-  border: 1px red solid;
-}
+/* * { */
+/* border: 1px red solid; */
+/* } */
 
-html,
-body {
-  border: none;
-}
+/* html, */
+/* body { */
+/*   border: none; */
+/* } */
 
 html {
   box-sizing: border-box;
@@ -13,6 +13,7 @@ html {
 }
 
 .container {
+  display: grid;
   width: 960px;
   height: 960px;
   padding: 0;
