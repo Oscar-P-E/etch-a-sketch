@@ -14,12 +14,15 @@ html {
 
 body {
   height: 100%;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-content: center; */
 }
 
 .container {
   display: grid;
-  width: 900px;
-  height: 900px;
+  width: 80px;
+  height: 80px;
   padding: 0;
   margin: 0;
   position: absolute;
@@ -30,4 +33,12 @@ body {
 
 .square {
   background: lightgrey;
+}
+
+.n-squares-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  font-size: 2rem;
 }
