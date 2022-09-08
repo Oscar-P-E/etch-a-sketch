@@ -2,7 +2,7 @@ const container = document.querySelector(".container");
 
 let nSquares = 16;
 
-// So that we only write to the DOM once rather than redrawing nSquares times
+// So that we only write to the DOM and redraw once
 let fragment = document.createDocumentFragment();
 
 for (i = 0; i < nSquares; ++i) {
@@ -18,27 +18,10 @@ container.setAttribute(
 
 container.appendChild(fragment);
 
-// make nSquares = 16
-// add rule to container to make columns = Math.sqrt(nSquares);
-
 const squares = document.querySelectorAll(".square");
 
 // add hoveron event listener for each square in squares
-// event triggers set attribute style background black (or some contrasting color)
-
-// - make a square in container
-// - make 16x16 squares in container
-// - make the squares have equal rows and columns (be square)
-
-// Set up a “hover” effect so that the grid divs change color when your mouse passes over them,
-// leaving a (pixelated) trail through your grid like a pen would.
-// - Hint: “Hovering” is what happens when your mouse enters a div and ends
-// when your mouse leaves it. You can set up event listeners for either of
-// those events as a starting point.
-
-//- There are multiple ways to change the color of the divs, including:
-// -adding a new class to the div.
-// -changing the div’s background color using JavaScript.
+// event sets attribute style background black (or some contrasting color)
 
 // Add a button to the top of the screen that will send the user a popup asking for the number of
 // squares per side for the new grid. Once entered, the existing grid should be removed and a new
