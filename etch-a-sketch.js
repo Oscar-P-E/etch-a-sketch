@@ -70,13 +70,17 @@ function makeBlack(e) {
 
 function makeRandColor(e) {
   e.target.setAttribute("style", `background: ${randomRGB()}`);
+
+  function randomRGB() {
+    let r = Math.ceil(Math.random() * 255);
+    let g = Math.ceil(Math.random() * 255);
+    let b = Math.ceil(Math.random() * 255);
+    return `rgb(${r}, ${g}, ${b})`;
+  }
 }
 
-function randomRGB() {
-  let r = Math.ceil(Math.random() * 255);
-  let g = Math.ceil(Math.random() * 255);
-  let b = Math.ceil(Math.random() * 255);
-  return `rgb(${r}, ${g}, ${b})`;
+function progressiveBlack() {
+  // get transparency value
+  // add 10
+  // set transparency to new value
 }
-
-function progressiveBlack() {}
