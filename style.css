@@ -12,10 +12,22 @@ html {
   font-size: 62.5%; /* 10pt, for easy rem sizing */
 }
 
+body {
+  height: 100%;
+}
+
 .container {
   display: grid;
-  width: 960px;
-  height: 960px;
+  width: 900px;
+  height: 900px;
   padding: 0;
-  margin: auto;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.square {
+  background: lightgrey;
 }
