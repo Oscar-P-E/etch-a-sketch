@@ -20,6 +20,13 @@ container.appendChild(fragment);
 
 const squares = document.querySelectorAll(".square");
 
+squares.forEach((square) => {
+  square.addEventListener("mouseover", makeBlack);
+});
+
+function makeBlack(e) {
+  e.target.setAttribute("style", "background: black");
+}
 // add hoveron event listener for each square in squares
 // event sets attribute style background black (or some contrasting color)
 
