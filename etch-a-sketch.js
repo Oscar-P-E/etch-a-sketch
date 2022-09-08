@@ -1,23 +1,33 @@
 const container = document.querySelector(".container");
 const upperContainer = document.querySelector(".upper-container");
 
-let nSquares = 16;
+// let n = 16;
 
-// So that we only write to the DOM and redraw once
-let fragment = document.createDocumentFragment();
+const nSquaresBtn = document.createElement("button");
+nSquaresBtn.classList.add("n-squares-btn");
+nSquaresBtn.textContent = "Create custom canvas";
 
-for (i = 0; i < nSquares; ++i) {
-  let square = document.createElement("div");
-  square.classList.add("square");
-  fragment.appendChild(square);
+upperContainer.appendChild(nSquaresBtn);
+
+function drawCanvas(n) {
+  // So that we only write to the DOM and redraw once
+  let fragment = document.createDocumentFragment();
+
+  for (i = 0; i < n; ++i) {
+    let square = document.createElement("div");
+    square.classList.add("square");
+    fragment.appendChild(square);
+  }
+
+  container.setAttribute(
+    "style",
+    `grid-template-columns: repeat(${Math.sqrt(n)}, 1fr)`
+  );
+
+  container.appendChild(fragment);
 }
 
-container.setAttribute(
-  "style",
-  `grid-template-columns: repeat(${Math.sqrt(nSquares)}, 1fr)`
-);
-
-container.appendChild(fragment);
+drawCanvas(16);
 
 const squares = document.querySelectorAll(".square");
 
@@ -28,12 +38,6 @@ squares.forEach((square) => {
 function makeBlack(e) {
   e.target.setAttribute("style", "background: black");
 }
-
-const nSquaresBtn = document.createElement("button");
-nSquaresBtn.classList.add("n-squares-btn");
-nSquaresBtn.textContent = "Create custom canvas";
-
-upperContainer.appendChild(nSquaresBtn);
 
 // Add a button to the top of the screen that will send the user a popup asking for the number of
 // squares per side for the new grid. Once entered, the existing grid should be removed and a new
