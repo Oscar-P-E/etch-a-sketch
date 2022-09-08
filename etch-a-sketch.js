@@ -52,8 +52,8 @@ function drawCanvas(n) {
 
   squares.forEach((square) => {
     // square.addEventListener("mouseover", makeBlack);
-    square.addEventListener("mouseover", makeRandColor);
-    // square.addEventListener("mouseover", progressiveBlack);
+    // square.addEventListener("mouseover", makeRandColor);
+    square.addEventListener("mouseover", progressiveBlack);
   });
 }
 
@@ -79,8 +79,14 @@ function makeRandColor(e) {
   }
 }
 
-function progressiveBlack() {
-  // get transparency value
-  // add 10
-  // set transparency to new value
+function progressiveBlack(e) {
+  if (!e.target.classList.contains("touched")) {
+    e.target.classList.add("touched");
+  }
+
+  let opacity = Number(
+    window.getComputedStyle(e.target).getPropertyValue("opacity")
+  );
+  opacity += 0.1;
+  e.target.setAttribute("style", `opacity: ${opacity}`);
 }
