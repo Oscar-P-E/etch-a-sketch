@@ -21,8 +21,8 @@ body {
 
 .container {
   display: grid;
-  width: 80px;
-  height: 80px;
+  width: 800px;
+  height: 800px;
   padding: 0;
   margin: 0;
   position: absolute;
