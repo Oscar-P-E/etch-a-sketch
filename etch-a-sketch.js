@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+const upperContainer = document.querySelector(".upper-container");
 
 let nSquares = 16;
 
@@ -27,12 +28,16 @@ squares.forEach((square) => {
 function makeBlack(e) {
   e.target.setAttribute("style", "background: black");
 }
-// add hoveron event listener for each square in squares
-// event sets attribute style background black (or some contrasting color)
+
+const nSquaresBtn = document.createElement("button");
+nSquaresBtn.classList.add("n-squares-btn");
+nSquaresBtn.textContent = "Create custom canvas";
+
+upperContainer.appendChild(nSquaresBtn);
 
 // Add a button to the top of the screen that will send the user a popup asking for the number of
 // squares per side for the new grid. Once entered, the existing grid should be removed and a new
-// grid should be generated in the same total space as before (e.g. 960px wide) so that you’ve got
+//grid should be generated in the same total space as before (e.g. 960px wide) so that you’ve got
 // a new sketch pad. Tip: Set the limit for the user input to a maximum of 100. A larger number of
 // squares results in more computer resources being used, potentially causing delays, freezing, or
 // crashing that we want to prevent.
