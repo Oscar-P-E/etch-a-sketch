@@ -17,9 +17,9 @@ drawCanvas(n);
 // }
 
 function promptSize(n) {
-  userInput = prompt("Enter custom grid width (max 100):");
+  let userInput = prompt("Enter custom grid width (max 100):");
 
-  if (n < 1 || n > 100 || n === NaN) {
+  if (n < 1 || n > 100 || isNaN(n)) {
     return window.alert(
       "Invalid size. You must enter a number between 1 and 100."
     );
@@ -35,7 +35,7 @@ function drawCanvas(n) {
   // So that we only write to the DOM and redraw once
   let fragment = document.createDocumentFragment();
 
-  for (i = 0; i < n; ++i) {
+  for (let i = 0; i < n; ++i) {
     let square = document.createElement("div");
     square.classList.add("square");
     fragment.appendChild(square);
