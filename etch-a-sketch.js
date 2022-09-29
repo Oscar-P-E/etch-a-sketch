@@ -16,19 +16,17 @@ drawCanvas(n);
 // document.querySelectorAll(.square)
 // }
 
-function promptSize(n) {
-  let userInput = prompt("Enter custom grid width (max 100):");
+function promptSize() {
+  const userInput = prompt("Enter custom grid width (max 100):");
 
-  if (n < 1 || n > 100 || isNaN(n)) {
+  if (userInput < 1 || userInput > 100 || isNaN(userInput)) {
     return window.alert(
       "Invalid size. You must enter a number between 1 and 100."
     );
   }
 
-  n = userInput ** 2;
-
   container.replaceChildren();
-  drawCanvas(n);
+  drawCanvas(userInput ** 2);
 }
 
 function drawCanvas(n) {
